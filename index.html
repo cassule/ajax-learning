@@ -6,20 +6,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Ajax Learning</title>
   </head>
-  <body>
-    <input type="text" id="username" />
-    <input type="button" onclick="sub()" value="Enviar" />
-    <br />
-    <br />
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
 
-    <img
-      class="avatar"
-      src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
-      alt="avatart"
-    />
-    <p class="user"></p>
-    <p class="name"></p>
-    <p class="bio"></p>
+    body {
+      display: flex;
+      justify-content: center;
+      background-color: #5a2989;
+    }
+
+    input {
+      outline: 0;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 980px;
+      height: 700px;
+      /*border: 1px solid #fff; */
+    }
+
+    .git-hube-user {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .form-search > #username {
+      height: 40px;
+      width: 430px;
+      padding-left: 20px;
+      border-radius: 20px;
+      border: 0;
+      background-color: #48216e;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <section class="content container">
+      <div class="git-hube-user">
+        <div class="form-search">
+          <input type="text" id="username" placeholder="Username" />
+          <input type="button" onclick="sub()" value="Enviar" />
+        </div>
+
+        <div class="form-user">
+          <img
+            class="avatar"
+            src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+            alt="avatart"
+          />
+          <p class="user">cassule</p>
+          <p class="name">Josué Francisco</p>
+          <p class="bio">Hello Word</p>
+        </div>
+      </div>
+    </section>
   </body>
 
   <script>
