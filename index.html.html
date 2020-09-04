@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Ajax Learning</title>
+  </head>
+  <body>
+    <input type="text" id="username" />
+    <input type="button" onclick="sub()" value="Enviar" />
+    <br />
+    <br />
+
+    <img
+      class="avatar"
+      src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+      alt="avatart"
+    />
+    <p class="user"></p>
+    <p class="name"></p>
+    <p class="bio"></p>
+  </body>
+
+  <script>
+    $(document).ready(() => {
+      sub();
+    });
+
+    function sub() {
+      let user = submitFunction();
+
+      $.ajax({
+        url: `https://api.github.com/users/${user}`,
+        success: (result) => {
+          $(".avatar").attr("src", result.avatar_url);
+          $(".user").html(result.login);
+          $(".name").html(result.name);
+          $(".bio").html(result.bio);
+        },
+      });
+    }
+
+    function submitFunction() {
+      let user = document.getElementById("username").value;
+
+      if (!user) return "cassule";
+
+      return user;
+    }
+  </script>
+</html>
